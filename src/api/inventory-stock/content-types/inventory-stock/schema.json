@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventory_stocks",
+  "info": {
+    "singularName": "inventory-stock",
+    "pluralName": "inventory-stocks",
+    "displayName": "Inventory Stock"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "inventory_id": {
+      "type": "uid",
+      "required": true
+    },
+    "product_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "location_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "qty_on_hand": {
+      "type": "integer"
+    },
+    "reorder_level": {
+      "type": "integer"
+    }
+  }
+}
